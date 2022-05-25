@@ -1,0 +1,62 @@
+<head>
+<style>
+body{
+    background-color: #072227;
+}
+ h2{
+     color: #35858B;
+     text-align: center;
+ }
+.form{
+    margin: auto;
+    background-color: white;
+    width: 500px;
+    height: 580px;
+    text-align: center;
+    margin-top: 100px;
+    padding: 10px;
+    border-radius: 4px;
+    text-align: right;
+}
+
+.form input{
+    width: 250px;
+    padding: 12px 20px;
+    margin: 8px ;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    margin-right: 80px;
+    background-color: #F5F5F5;
+}
+
+input[type=submit]{
+    margin-right: 125px;
+    background-color: #35858B;
+    color: white;
+}
+input[type=submit]:hover {
+            background-color: #3A9399;
+            cursor: pointer;
+        }
+
+p{
+    color: #35858B;
+}
+</style>
+</head>
+
+<body>
+<form action="/compra" method="post">
+<div class="form">
+    <h2>Adicionar Automóvel</h2>
+    <p>Matrícula: <input name="matricula"></p>
+    <p>Marca: <input name="marca" class="marca"></p>
+    <p>Modelo: <input name="modelo"></p>
+    <p>Tipo: <input name="tipo"></p>
+    <p>Ano: <input name="ano"></p>
+    <p>Preço de Compra: <input name="precoCompra"></p>
+    <input type=submit value="Adicionar">
+</div>
+</form>
+</body>
+</html>
