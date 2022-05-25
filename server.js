@@ -175,70 +175,15 @@ app.get('/', (req, res) => {
 app.set('view engine', 'ejs')
 
  
-app.get('/compra', (req, res) => {
-    res.render('pages/compra')
-})
-
-app.get('/venda', (req, res) => {
-    res.render('pages/venda')
-})
-app.get('/atualizarRestauro', (req, res) => {
-    res.render('pages/atualizarRestauro')
-})
-app.get('/visualizar', (req, res) => {
-    res.render('pages/visualizar')
-})
-app.get('/gestaoBD', (req, res) => {
-    res.render('pages/gestaoBD')
-})
-app.get('/alterarDados', (req, res) => {
-    res.render('pages/alterarDados')
-})
-app.get('/relatorios', (req, res) => {
-    res.render('pages/relatorios')
-})
-app.get('/alterarMatricula', (req,res)=>{
-  res.render('pages/alterarMatricula')
-})
-
-
-app.put('/alterarMatricula', (req, res)=>{
-
-  let veiculo = {
-
-    "id" : req.body._id
-    
-  }
-  let newMatricula ={
-    $push: {
-    "id" : req.body.novaMatricula
-
-    }
-  }
-
-  Veiculo.findByIdAndUpdate(veiculo, newMatricula, (err, res)=>{
-    console.log(err);
-    console.log(res);
-  });
 
 
 
 
 
-  /* let doc = await veiculo.findOne(oldMatricula, newMatricula, {
-    new: true
-  });
 
-  Veiculo.findOneAndUpdate(veiculo, req.body)
-  .exec(function(err, result){ 
-    if(err){
-      return res.send(err)
-    }
-    if(result){
-      res.json({result, message: 'Successfully updated'})
-    }
-  }) */
-})
+
+
+
 
 
 

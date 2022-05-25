@@ -33,28 +33,55 @@
   </style>
 </head>
 <body>
-	<main style="margin-left: auto; margin-top: 10%;">
+	<main style="margin-left: auto; margin-top: 10%;" onload="start()">
 		<div>
       <h1>Gestão de negócio de automoveis</h1>
-		<table>
-		  <tr>
-		   	<th><a href="/compra"><input type="submit" value="Compra" /></a></th>
-		  </tr>
+      <table>
+        <tr>
+          <th><a href="/compra"><input type="submit" value="Compra" /></a></th>
+        </tr>
 
-		  <tr>
-		    <th><a href="/venda"><input type="submit" value="Venda" /></a></th>
-		  </tr>
+        <tr>
+          <th><a href="/venda"><input type="submit" value="Venda" /></a></th>
+        </tr>
 
-		  <tr>
-		    <th><a href="/alterarDados"><input type="submit" value="Alterar dados" /></a></th>
-		  </tr>
+        <tr>
+          <th><a href="/alterarDados"><input type="submit" value="Alterar dados" /></a></th>
+        </tr>
 
-		  <tr>
-		    <th><a href="/relatorios"><input type="submit" value="Relatórios " /></a></th>
-		  </tr>
-		</table>
+        <tr>
+          <th><a href="/relatorios"><input type="submit" value="Relatórios " /></a></th>
+        </tr>
+      </table>
+    </div>
+
+    <div class="form">
+      <h2>Automóveis em Stock</h2>
+        <ul id="listaVeiculos">
+         
+        </ul>
+      
       </div>
-		
+      </form>
+    
+    <script>
+        function start(){
+            visualizarVeiculos();
+        }
+    </script>
+		<script>
+      function visualizarVeiculos(){
+          var xhttp = new XMLHttpRequest();
+          xttp.onreadystatechange = function() {
+              if(this.readyState == 4 && this.status == 200){
+                  console.log("Response empty");
+                  document.getElementById("listaVeiculos").innerHTML = this.responseText;
+              }
+          }
+          xhttp.open("GET", "/list", true);
+          xhttp.send();
+      }
+    </script>
 	</main>
 	
 
