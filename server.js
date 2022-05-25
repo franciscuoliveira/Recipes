@@ -65,7 +65,7 @@ const VendaSchema = mongoose.Schema({
 const VehicleModel = mongoose.model('veiculos', VeiculoSchema);
 const VendaModel = mongoose.model('vendas', VendaSchema);
 //Conects to DB
-mongoose.connect('mongodb+srv://filipa:filipa@cluster0.l8mq2.mongodb.net/CarDealer?retryWrites=true&w=majority', () =>
+mongoose.connect('mongodb+srv://sictp:sictp@sictp.mlco8.mongodb.net/?retryWrites=true&w=majority', () =>
     console.log('Conected to DB!')
 );
 

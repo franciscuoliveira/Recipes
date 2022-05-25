@@ -26,10 +26,7 @@ const VeiculoSchema = mongoose.Schema({
         type: String,
         require: true
     },
-    precoRestauro: {
-        type: Number,
-        require: true
-    },
+    
 })
 
 const VendaSchema = mongoose.Schema({
