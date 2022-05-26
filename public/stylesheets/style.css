@@ -1,0 +1,227 @@
+body {
+  padding: 50px;
+  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+}
+
+a {
+  color: #00B7FF;
+}
+
+h1{
+  color: #C0B283;
+  text-align: center;
+  width:100%;
+font-family: "Lucida Console", Monaco, monospace;
+}
+body{
+
+background-color: #f4f4f4;
+  font-family: "Courier New", Courier, monospace;
+margin: 0;
+padding: 0;
+}
+div.align:nth-child(odd) {
+  color:#373737;
+text-align: justify;
+margin-left: auto;
+margin-right: 150px;
+width: 450px;
+float: right;
+}
+div.align:nth-child(even) {
+  color:#373737;
+text-align: justify;
+margin-left: 150px;
+margin-right: auto;
+width: 450px;
+float: left;
+}
+div.align_ultimo {
+  color:#373737;
+text-align: justify;
+width: 450px;
+float: center;
+margin-top: 18%;
+margin-left:auto;
+margin-right: auto;
+}
+div.align_{
+color:#373737;
+text-align: justify;
+margin-left: auto;
+margin-right: auto;
+width: 450px;
+float: center;
+
+}
+h2{
+  color: #C0B283;
+text-align:center;
+}
+h3{
+color:#DCD0C0;
+text-align: center;
+}
+
+/*menu*/ 
+
+ul {
+ position: sticky;
+ list-style-type: none;
+ margin: 0;
+ padding: 0;
+ overflow: hidden;
+ background-color: rgb(244,244,244,0.4);
+}
+li {
+ display: inline;
+ float: left;
+}
+
+li a{
+display: block;
+color: #373737; 
+text-align: center;
+padding: 25px 20.5px;
+text-decoration: none;
+background-color: rgb(244,244,244,0.4);
+border-bottom: 3px solid transparent;
+}
+a{
+ background-color: rgb(244,244,244,0.4);
+ color: #373737;
+}
+
+li a:hover {
+border-bottom: 3px solid #C0B283;
+}
+li a:active {
+border-bottom: 3px solid #C0B283;
+}
+
+
+.header{
+ width: 40%;
+ font-size: large;
+ font-family: "Lucida Console", Monaco, monospace;
+}
+div.lista{
+ width: 60%;
+ float: right;
+ margin: 0;
+}
+
+footer{
+ position: fixed;
+ width: 100%;
+ bottom: 0;
+ left: 0;
+ color: #373737;
+ text-align: center;
+ vertical-align: center;
+ font-family: "Courier New", Courier, monospace;
+ font-weight: bold;
+ background-color: #f4f4f4;
+ padding-top: 20px;
+ padding-bottom: 20px;
+}
+
+.imagem
+{
+ display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  align-items: center;
+  flex-wrap: wrap;
+  padding-top: 100px;
+  padding-bottom: 30px;
+  font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+  font-size: 30px;
+}
+
+
+.flex-container {
+display: flex;
+flex-wrap: wrap;
+}
+
+.flex-container > article 
+{
+width: 300px;
+margin: 167px;
+text-align: center;
+line-height: 35px;
+font-size: 15px;
+}
+
+
+header
+{
+text-align: center;
+margin-top: 50px;
+font-size: 30px;
+}
+
+nav > ul > li ul {display: none;}
+nav > ul li:hover > ul {display: block;}
+
+.dropdown-content
+{
+display: none;
+position: fixed;
+max-width: 200px;
+z-index: 1;
+padding: 12px 16px 10px 12px;
+}
+.dropdown
+{
+position: relative;
+left: 20%;
+
+}
+.intro
+{
+width: 100%;
+}
+
+section
+{ 
+text-align: justify;
+background-color: #f4f4f4;
+display: block;
+height: 300px;
+
+}
+
+section:nth-child(even)
+{
+background-color: #373737;
+color: white;
+}
+
+span
+{
+float: left;
+width: 450px;
+margin-left: 150px;
+margin-right: auto;
+}
+
+.inicial
+{
+float: right
+}
+
+#imagens
+{
+float: right;
+margin-right: 150px;
+vertical-align: middle;
+padding: 2%;
+}
+
+.header{
+  width: 40%;
+  font-size: large;
+  font-family: "Lucida Console", Monaco, monospace;
+  }

@@ -1,68 +1,45 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>Receitas</title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+    <style>
+      
+      div.lista{
+        width: 60%;
+        float: right;
+        margin: 0;
+      }
+    </style>
+  </head>
 
-<head>
-	<meta charset="UTF-8">
-
-	<title>Gestão de Negócio de Automoveis</title>
-  <style>
-    body{
-      background-color: white;
-    }
-    h1 {
-      text-align: center;
-      color: #35858B;
-    }
-    table {
-      width: 100%;
-      margin-left: 30px;
-    }
+  <body>
+	<main  onload="start()">
+    <ul>
+      <nav>
+          <ul>
+            <li class="header"><a href="/" target="_self"> Receitas </a></li>
+            <div class="lista">
+              <li><a href="/PeqAlmoco" target="_self">Pequeno-almoço</a></li>
+              <li><a href="/carne" target="_self">Carne</a></li>
+              <li><a href="/peixe" target="_self">Peixe</a></li>
+              <li><a href="/sobremesa" target="_self">Sobremesas</a></li>
+            </div>
+          </ul>
+      </nav>
+  </ul>
     
-    input[type=submit] {
-      width: 250px;
-      padding: 12px 20px;
-      margin: 2px ;
-      border: 1px solid #35858B;
-      border-radius: 4px;
-      margin-right: 80px;
-      background-color: #35858B;
-      color: white;
-    }
-	input[type=submit]:hover {
-            background-color: #3A9399;
-            cursor: pointer;
-        }
-  </style>
-</head>
-<body>
-	<main style="margin-left: auto; margin-top: 10%;" onload="start()">
-		<div>
-      <h1>Gestão de negócio de automoveis</h1>
-      <table>
-        <tr>
-          <th><a href="/compra"><input type="submit" value="Compra" /></a></th>
-        </tr>
-
-        <tr>
-          <th><a href="/venda"><input type="submit" value="Venda" /></a></th>
-        </tr>
-
-        <tr>
-          <th><a href="/alterarDados"><input type="submit" value="Alterar dados" /></a></th>
-        </tr>
-
-        <tr>
-          <th><a href="/relatorios"><input type="submit" value="Relatórios " /></a></th>
-        </tr>
-      </table>
-    </div>
-
     <div class="form">
       <h2>Automóveis em Stock</h2>
         <ul id="listaVeiculos">
-         
+          <a href="/list" target="_self">aa</a>
         </ul>
       
       </div>
       </form>
+
+      <iframe src="https://aula14112021franciscopdw.s3.us-east-2.amazonaws.com/Penne+com+Molho+Pesto+e+Queijo+Fresco+Atabafado.mp4"></iframe>
     
     <script>
         function start(){
@@ -86,3 +63,8 @@
 	
 
 </body>
+
+</html>
+
+
+

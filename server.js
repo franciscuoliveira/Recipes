@@ -3,6 +3,7 @@ const logger = require('morgan');
 const errorhandler = require('errorhandler');
 const mongoose = require('mongoose');
 const bodyParser = require('body-parser');
+var path = require('path');
 require('dotenv/config');
 let app = express();
 app.use('/public', express.static('files'));
@@ -69,63 +70,6 @@ mongoose.connect('mongodb+srv://sictp:sictp@sictp.mlco8.mongodb.net/?retryWrites
     console.log('Conected to DB!')
 );
 
-app.post("/compra", urlencodedParser, async function(req, res) {
-    let veiculo = {
-      _id: req.body._id,
-      marca: req.body.marca,
-      modelo: req.body.modelo,
-      ano: req.body.ano,
-      tipo: req.body.tipo,
-      precoCompra: req.body.precoCompra,
-      dataCompra: req.body.dataCompra,
-      precoRestauro: req.body.precoRestauro
-    };
-   
-VehicleModel.findOne(veiculo, function(err, result) {
-  if (err) {
-    return res.send(err)
-  }
-
-  if (result) {
-    return res.send("Este veículo já existe!")
-  }
-
-  VehicleModel.create(veiculo, function(err, result) {
-    if (err) {
-      return res.send(err)
-    }
-
-    if (result) {
-      return res.send("Veículo adicionado com sucesso!")
-    }
-  });
-});
-});
-
-app.post("/veiculo/vender", urlencodedParser, async function(req, res){
-    let venda = {
-        _id: req.body._id,
-        precoVenda: req.body.precoVenda,
-        dataVenda: req.body.dataVenda,
-      };
-    
-      const existe = await VehicleModel.findOne({_id: req.body._id});
-
-      if(existe){
-        VendaModel.create(venda, function(err, result) {
-            if(err){
-                return res.send(err)
-            }
-
-            if(result){
-                return res.send("Venda efetuada")
-            }
-        })
-      }else{
-        return res.send("erro")
-      }
-});
-
 app.get('/list', async function(req, res) {
   const emStock = await VehicleModel.find();
   string = "";
@@ -143,29 +87,27 @@ app.get('/list', async function(req, res) {
   return res.send(string)
 });
 
-app.get('/vendidos', async function(req, res) {
-    const vendido = await VendaModel.find();
-    string = ""
-    if(vendido){
-        for(let i = 0; i < vendido.length; i++) {
+app.use(express.static(path.join(__dirname, 'public')));
+app.set('views', path.join(__dirname, 'views'));
+app.set('view engine', 'ejs');
 
-            console.log(vendido[i]._id);
-            stock = await VehicleModel.findOne({_id: vendido[i]._id});
-        if(stock){
-            string += "<li> <b>Matrícula: " + vendido[i]._id + "<ul><li>Marca: " + stock.marca + " Modelo: " + stock.modelo + " Ano: " + stock.ano + " Tipo: " + stock.tipo + " Preço de compra: " + stock.precoCompra + " Data de compra:" + stock.dataCompra + " Preço de restauro: " + stock.precoRestauro + " Data de venda: "+ vendido[i].dataVenda + " Preço de venda: "+ vendido[i].precoVenda + "</li>";
-            
-            }
-      
-        }
-    }
-    else{
-      string = "Não há veículos vendidos."
-    }
+app.get('/peqAlmoco', (req,res) => {
+  res.render('pages/peqAlmoco');
+})
 
-    return res.send(string)
-});
+app.get('/carne', (req,res) => {
+  res.render('pages/carne');
+})
 
-app.listen(3003, ()=> console.log('server ok http://localhost:3000'));
+app.get('/peixe', (req,res) => {
+  res.render('pages/peixe');
+})
+
+app.get('/sobremesa', (req,res) => {
+  res.render('pages/sobremesa');
+})
+
+app.listen(3003, ()=> console.log('server ok http://localhost:3003'));
 
 
 //express

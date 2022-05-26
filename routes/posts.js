@@ -9,6 +9,9 @@ router.get('/', (req, res) => {
 router.get('/compra', (req, res) => {
     res.render('/pages/compra');
 });
+router.get('/peqAlmoco', (req, res) => {
+    res.render('/pages/peqAlmoco');
+});
 router.post('/', (req, res) => {
     console.log(req.body);
 });
