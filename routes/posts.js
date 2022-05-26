@@ -12,6 +12,4 @@ router.get('/compra', (req, res) => {
 router.post('/', (req, res) => {
     console.log(req.body);
 });
-
-
 module.exports = router;
