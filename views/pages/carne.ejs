@@ -11,6 +11,7 @@
         float: right;
         margin: 0;
       }
+      
     </style>
   </head>
 
@@ -22,23 +23,30 @@
             <li class="header"><a href="/" target="_self"> Receitas </a></li>
             <div class="lista">
               <li><a href="/PeqAlmoco" target="_self">Pequeno-almoço</a></li>
-              <li><a href="/carne" target="_self">Carne</a></li>
+              <li><a href="/carne" target="_self" class="active">Carne</a></li>
               <li><a href="/peixe" target="_self">Peixe</a></li>
               <li><a href="/sobremesa" target="_self">Sobremesas</a></li>
             </div>
           </ul>
       </nav>
   </ul>
-  <div class="form">
-    <h2>Receitas:</h2>
-      <ul id="listaVeiculos">
-        <p><%= nome %></p>
-        <p><%= ingredientes %></p>
-        <p><%= preparacao %></p>
-      </ul>
-    </div>
-  </form>
+  <iframe src="https://sicrecipes.s3.us-east-2.amazonaws.com/chilli.mp4" class="video"></iframe>
+        
 
+        <h1><%= nome %></h1>
+        <div class="align">
+            <p><%= ingredientes %></p>
+        </div>
+        <div class="align">
+            <p><%= preparacao %></p>
+        </div>
+        
+    
+  </form>
+  <footer>
+    UBI | Serviços e Interfaces para a Cloud | Informática Web | Joana Almeida | Francisco Oliveira
+  </footer>
+  </main>
   </body>
 </html>
 

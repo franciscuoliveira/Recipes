@@ -11,6 +11,9 @@
         float: right;
         margin: 0;
       }
+      li a:active {
+      border-bottom: 3px solid #C0B283;
+      }
     </style>
   </head>
 
@@ -29,38 +32,14 @@
           </ul>
       </nav>
   </ul>
-    
-    <div class="form">
-      <h2>Automóveis em Stock</h2>
-        <ul id="listaVeiculos">
-          <a href="/list" target="_self">aa</a>
-          <p><%= veiculos %></p>
-        </ul>
-      </div>
-    </form>
-
-    <iframe src="https://aula14112021franciscopdw.s3.us-east-2.amazonaws.com/Penne+com+Molho+Pesto+e+Queijo+Fresco+Atabafado.mp4"></iframe>
-    
-    <script>
-        function start(){
-            visualizarVeiculos();
-        }
-    </script>
-		<script>
-      function visualizarVeiculos(){
-          var xhttp = new XMLHttpRequest();
-          xttp.onreadystatechange = function() {
-              if(this.readyState == 4 && this.status == 200){
-                  console.log("Response empty");
-                  document.getElementById("listaVeiculos").innerHTML = this.responseText;
-              }
-          }
-          xhttp.open("GET", "/list", true);
-          xhttp.send();
-      }
-    </script>
+  <div class="imagem">
+    <img src="https://sicrecipes.s3.us-east-2.amazonaws.com/kitchen.jpg" width="800px">
+    <figcaption>Receitas para dares sabores a tua <i>VIDA</i></figcaption>
+  </div>  
 	</main>
-	
+  <footer>
+    UBI | Serviços e Interfaces para a Cloud | Informática Web | Joana Almeida | Francisco Oliveira
+  </footer>
 
 </body>
 
