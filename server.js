@@ -70,6 +70,24 @@ mongoose.connect('mongodb+srv://sictp:sictp@sictp.mlco8.mongodb.net/?retryWrites
     console.log('Conected to DB!')
 );
 
+//express
+app.get('/', async function(req, res) {
+
+  const emStock = await VehicleModel.find();
+  vei = "";
+  if(emStock){
+      for(let i = 0; i < emStock.length; i++) {
+
+          
+          vei += "<li> <b>Matrícula: " + emStock[i]._id + "<><li>Marca: " + emStock[i].marca + " Modelo: " + emStock[i].modelo + " Ano: " + emStock[i].ano + " Tipo: " + emStock[i].tipo + " Preço de compra: " + emStock[i].precoCompra + " Data de compra:" + emStock[i].dataCompra + " Preço de restauro: " + emStock[i].restorationCost + " </li>";
+          
+      }
+  }else{
+    vei = "Não há veículos em stock."
+  }
+    res.render('pages/index', { veiculos : vei });
+});
+
 app.get('/list', async function(req, res) {
   const emStock = await VehicleModel.find();
   string = "";
@@ -110,10 +128,8 @@ app.get('/sobremesa', (req,res) => {
 app.listen(3003, ()=> console.log('server ok http://localhost:3003'));
 
 
-//express
-app.get('/', (req, res) => {
-    res.render('pages/index')
-})
+
+
 app.set('view engine', 'ejs')
 
  
