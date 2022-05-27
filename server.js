@@ -135,7 +135,7 @@ app.get('/sobremesa', async function(req,res) {
   res.render('pages/sobremesa', { nome : nome , ingredientes : ingredientes, preparacao : preparacao});
 })
 
-app.listen(3003, ()=> console.log('server ok http://localhost:3003'));
+app.listen(3004, ()=> console.log('server ok http://localhost:3003'));
 
 
 
