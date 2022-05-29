@@ -12,6 +12,8 @@ app.use(bodyParser.json())
 app.use(logger('dev'))
 app.use(errorhandler())
 
+const PORT = process.eventNames.PORT || 3000;
+
 //Imports Routes
 const postsRoute = require('./routes/posts');
 const { stringify } = require('nodemon/lib/utils');
@@ -152,7 +154,7 @@ app.get('/sobremesa', async function(req,res) {
   res.render('pages/sobremesa', { nome : nome , ingredientes : ingredientes, preparacao : preparacao});
 })
 
-app.listen(3004, ()=> console.log('server ok http://localhost:3004'));
+app.listen(PORT, ()=> console.log('server ok http://localhost:'+PORT));
 
 
 
