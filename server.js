@@ -12,7 +12,7 @@ app.use(bodyParser.json())
 app.use(logger('dev'))
 app.use(errorhandler())
 
-const PORT = process.eventNames.PORT || 3000;
+const PORT = process.env.PORT || 3000;
 
 //Imports Routes
 const postsRoute = require('./routes/posts');
