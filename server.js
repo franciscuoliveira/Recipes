@@ -27,7 +27,24 @@ mongoose.connect('mongodb+srv://sictp:sictp@sictp.mlco8.mongodb.net/?retryWrites
 
 //express
 app.get('/', async function(req, res) {
-    res.render('pages/index');
+
+  const receita = await receitaModel.find();
+  rec = "";
+  if(receita){
+      for(let i = 0; i < receita.length; i++) {
+        if(receita[i].tipo == "peqAlmoco"){
+          nome = receita[i].nome;
+          ingredientes = receita[i].ingredientes;
+          preparacao = receita[i].preparacao;
+
+          rec = "";
+        }
+      }
+  }else{
+    rec = "Não há receitas."
+  }
+
+  res.render('pages/index', { nome : nome , ingredientes : ingredientes, preparacao : preparacao});
 });
 
 app.get('/list', async function(req, res) {
@@ -138,7 +155,6 @@ app.get('/sobremesa', async function(req,res) {
 app.listen(3004, ()=> console.log('server ok http://localhost:3004'));
 
 
-//test
 
 app.set('view engine', 'ejs')
 
